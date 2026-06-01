@@ -2,6 +2,11 @@
 
 ## 更新日誌 (Changelog)
 
+
+### [1.1.2-Preview]
+#### 新增 (Added)
+- 新增 `index.html` 作為跳轉頁面，自動導向至 `Main.html` 以符合 GitHub Pages 規範，並延遲兩秒
+
 ### [1.1.1-Preview]
 #### 新增 (Added)
 - 新增 `index.html` 作為跳轉頁面，自動導向至 `Main.html` 以符合 GitHub Pages 規範
