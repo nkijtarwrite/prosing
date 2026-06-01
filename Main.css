@@ -1,0 +1,218 @@
+/* 根變數設定 - 方便全域修改顏色 */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --text-color: #333333;
+    --text-light: #666666;
+}
+
+/* 基礎重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, '微軟正黑體', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+}
+
+/* === 標頭與導覽列 === */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* === 主要內容區塊 === */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background: var(--bg-white);
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* 標題樣式 */
+h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+h3 {
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 文字與列表 */
+p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* === 個別區塊客製化 === */
+
+/* 自我介紹 */
+#about {
+    text-align: center;
+}
+
+#about img {
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    object-fit: cover;
+    display: block;
+}
+
+#about ul {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+#about ul li {
+    background-color: var(--bg-light);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+/* 專案卡片樣式 */
+#projects ul {
+    list-style: none;
+    margin: 0;
+}
+
+#projects li {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+#projects h3 span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: normal;
+}
+
+/* 圖片展區 */
+.photo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+figure {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+figure img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+figure:hover img {
+    transform: scale(1.02);
+}
+
+figcaption {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* === 頁尾 === */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 3rem;
+}
+
+footer p {
+    color: var(--bg-light);
+    margin: 0;
+}
