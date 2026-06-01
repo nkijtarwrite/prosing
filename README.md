@@ -2,6 +2,10 @@
 
 ## 更新日誌 (Changelog)
 
+### [1.1.1-Preview]
+#### 新增 (Added)
+- 新增 `index.html` 作為跳轉頁面，自動導向至 `Main.html` 以符合 GitHub Pages 規範
+
 ### [1.1.0-Preview] 
 #### 新增 (Added)
 - 新增 `Main.css` 並套用現代化卡片式設計與響應式排版
