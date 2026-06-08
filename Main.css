@@ -16,6 +16,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Helvetica Neue', Arial, '微軟正黑體', sans-serif;
     line-height: 1.6;
@@ -25,42 +29,91 @@ body {
 
 /* === 標頭與導覽列 === */
 header {
-    background-color: var(--primary-color);
+    background-color: rgba(44, 62, 80, 0.95); /* 半透明深色 */
+    backdrop-filter: blur(10px); /* 磨砂玻璃效果 */
     color: white;
-    padding: 2rem 0;
-    text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 0.8rem 0;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
 }
 
 header h1 {
-    margin-bottom: 1rem;
-    font-size: 2.2rem;
-    letter-spacing: 2px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    font-weight: 700;
+    color: var(--accent-color);
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    position: relative;
     transition: all 0.3s ease;
 }
 
-nav a:hover {
+/* 懸浮效果：背景微亮 + 底線動畫 */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
     background-color: var(--accent-color);
-    color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* 手機版適應 (簡單) */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        gap: 0.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+    }
 }
 
 /* === 主要內容區塊 === */
@@ -76,6 +129,7 @@ section {
     padding: 2.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    scroll-margin-top: 80px; /* 留出空間給固定的導覽列 */
 }
 
 /* 標題樣式 */

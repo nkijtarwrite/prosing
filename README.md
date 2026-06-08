@@ -3,6 +3,10 @@
 ## 更新日誌 (Changelog)
 
 
+### [1.1.4-Preview]
+#### 新增 (Added)
+- 修改導覽列的CSS樣式
+
 ### [1.1.3-1-Preview]
 #### 新增 (Added)
 - 新增 `Main.html` 個人資料
