@@ -11,29 +11,37 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, '微軟正黑體', sans-serif;
             background-color: #f8f9fa;
             color: #2c3e50;
         }
         .container {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
         .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(52, 152, 219, 0.1);
+            border-top: 5px solid #3498db;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.5rem;
+            animation: spin 1s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
         }
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        h2 {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
         }
     </style>
 </head>

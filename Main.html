@@ -8,6 +8,10 @@
 </head>
 <body>
     <header>
+        <!-- 滾動進度條 -->
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
         <div class="nav-container">
             <div class="logo">
                 <h1>[你的名字]</h1>
@@ -15,16 +19,19 @@
             <!-- 導覽列 -->
             <nav>
                 <ul>
-                    <li><a href="#about">自我介紹</a></li>
-                    <li><a href="#education">教育背景</a></li>
-                    <li><a href="#experience">經驗和實習</a></li>
-                    <li><a href="#skills">專業技能</a></li>
-                    <li><a href="#projects">專案作品</a></li>
-                    <li><a href="#articles">文章</a></li>
-                    <li><a href="#awards">獲獎</a></li>
-                    <li><a href="#gallery">活動</a></li>
+                    <li><a href="#about" class="nav-link">自我介紹</a></li>
+                    <li><a href="#education" class="nav-link">教育背景</a></li>
+                    <li><a href="#experience" class="nav-link">經驗和實習</a></li>
+                    <li><a href="#skills" class="nav-link">專業技能</a></li>
+                    <li><a href="#projects" class="nav-link">專案作品</a></li>
+                    <li><a href="#articles" class="nav-link">文章</a></li>
+                    <li><a href="#awards" class="nav-link">獲獎</a></li>
+                    <li><a href="#gallery" class="nav-link">活動</a></li>
                 </ul>
             </nav>
+            <div class="nav-extra">
+                <button id="theme-toggle" title="切換深淺模式">🌓</button>
+            </div>
         </div>
     </header>
 
@@ -130,5 +137,60 @@
     <footer>
         <p>&copy; 2026 [你的名字]的個人網站. All rights reserved.</p>
     </footer>
+
+    <script>
+        // 1. 滾動進度條與導覽連結高亮
+        window.onscroll = function() {
+            updateProgressBar();
+            updateActiveLink();
+        };
+
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        function updateActiveLink() {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(current)) {
+                    link.classList.add("active");
+                }
+            });
+        }
+
+        // 2. 深色模式切換
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
 </body>
 </html>
