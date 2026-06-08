@@ -2,6 +2,12 @@
 
 ## 更新日誌 (Changelog)
 
+### [1.1.8-1-Preview]
+#### 新增 (Added)
+- 將 `Main2.html` 的樣式抽離至獨立的 `Main2.css` 檔案中，提升代碼維護性
+- 優化 `Main2.html` 的佈局，增加內邊距 (Padding) 防止內容過於貼近螢幕邊緣
+- 縮小 `Main2.html` 頂部導覽列/橫幅 (Hero Section) 的高度，使視覺比例更協調
+
 ### [1.1.8-Preview]
 #### 新增 (Added)
 - 新增 `Main2.html` 興趣延伸頁面，展示生活興趣與遊戲經歷
