@@ -3,6 +3,10 @@
 ## 更新日誌 (Changelog)
 
 
+### [1.1.3-1-Preview]
+#### 新增 (Added)
+- 新增 `Main.html` 個人資料
+
 ### [1.1.3-Preview]
 #### 新增 (Added)
 -  `index.html` 美化
