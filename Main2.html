@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>興趣延伸 - 個人網站</title>
+    <link rel="stylesheet" href="Main.css">
+    <style>
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: var(--primary-color);
+            transform: translateX(-5px);
+        }
+        .hobby-hero {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        .game-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-10px);
+        }
+        .game-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        .hobby-section {
+            padding: 4rem 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(52, 152, 219, 0.1);
+            color: var(--accent-color);
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="Main.html" class="back-btn">← 返回主頁</a>
+
+    <header class="hobby-hero">
+        <div>
+            <h1>興趣延伸與生活</h1>
+            <p>在那程式碼之外，也是充滿爆破與熱情的精彩世界</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- 興趣愛好 -->
+        <section id="hobbies" class="hobby-section">
+            <h2>我的日常興趣</h2>
+            <p>除了研究全端開發與資料庫管理，我平時也喜歡探索各種能激發創意的活動。</p>
+            <div class="article-grid">
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1461141346587-763ab02bdbc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="爆破藝術">
+                    </div>
+                    <div class="article-content">
+                        <div class="badge">主要興趣</div>
+                        <h3>研究「爆破」的可能性</h3>
+                        <p>這裡的「爆破」是指挑戰程式碼的極限，或是研究動畫特效中的粒子爆破視覺。我對物體破碎與重組的過程非常著迷。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 遊戲世界 -->
+        <section id="games" class="hobby-section">
+            <h2>玩的遊戲</h2>
+            <p>遊戲是我獲取介面設計靈感的重要來源。我喜歡具備精彩特效與策略深度的作品。</p>
+            <div class="game-grid">
+                <div class="game-card">
+                    <div class="game-icon">💥</div>
+                    <h3>動作冒險類</h3>
+                    <p>喜歡具有爆炸性打擊感與華麗特效的作品，這能讓我思考如何將類似的震動感應用在網頁回饋中。</p>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">🎮</div>
+                    <h3>競技模擬類</h3>
+                    <p>熱衷於需要高度專注與邏輯判斷的遊戲，這與寫程式排錯的邏輯不謀而合。</p>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">🎯</div>
+                    <h3>策略養成類</h3>
+                    <p>規劃、管理、成長。我享受從無到有建立起一個體系的成就感。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 林均昊的個人網站. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 自動載入目前的深色模式設定
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</body>
+</html>
