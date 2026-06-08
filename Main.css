@@ -389,15 +389,15 @@ nav a:hover::after {
 
 /* === 主要內容區塊 === */
 main {
-    max-width: 900px;
+    max-width: 1100px; /* 增加寬度以提供更多呼吸空間 */
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 0 2rem; /* 增加外層內縮，防止卡片直接碰撞螢幕邊緣 */
 }
 
 section {
     background: var(--bg-white);
     margin-bottom: 2rem;
-    padding: 2.5rem;
+    padding: 3rem; /* 增加卡片內邊距，從 2.5rem 提升到 3rem */
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     scroll-margin-top: 80px; /* 留出空間給固定的導覽列 */

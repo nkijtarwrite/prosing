@@ -40,11 +40,25 @@
     margin-bottom: 0.3rem;
 }
 
-/* 內容內縮優化 */
+/* 內容內鎖優化 */
 main {
-    max-width: 900px; /* 從 1000px 縮小到 900px，讓內容更集中，視覺上不貼邊 */
+    max-width: 1200px; /* 大幅增加寬度，讓白色區塊更開闊 */
     margin: 0 auto;
-    padding: 2rem 4rem; /* 增加左右內邊距 (4rem)，防止內容貼邊 */
+    padding: 0 40px; /* 確保在小螢幕也有邊距 */
+}
+
+/* 移除原本覆蓋掉 Main.css 的 padding 設定，讓它回歸預設的 3rem 內距 */
+.hobby-section {
+    padding: 3rem; 
+    margin-bottom: 3rem;
+    border-radius: 12px;
+    background: var(--bg-white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center; /* 讓標題與引言置中 */
+}
+
+.article-content {
+    text-align: left; /* 保持卡片內文字靠左，方便閱讀 */
 }
 
 .game-grid {
@@ -70,10 +84,6 @@ main {
 .game-icon {
     font-size: 50px;
     margin-bottom: 15px;
-}
-
-.hobby-section {
-    padding: 2rem 0;
 }
 
 .badge {

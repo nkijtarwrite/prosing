@@ -2,6 +2,11 @@
 
 ## 更新日誌 (Changelog)
 
+### [1.1.8-3-Preview]
+#### 修正與擴張 (Fixed & Expanded)
+- 修正 `Main2.html` 區塊內距失效導致的貼邊問題，將 Padding 恢復為與主頁一致的 `3rem`
+- 將主容器最大寬度擴張至 `1200px`，讓白色區塊看起來更開闊、更不壓迫
+
 ### [1.1.8-2-Preview]
 #### 新增與優化 (Added & Optimized)
 - 將 `Main2.html` 優化
