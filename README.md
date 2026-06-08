@@ -2,11 +2,16 @@
 
 ## 更新日誌 (Changelog)
 
+### [1.1.8-2-Preview]
+#### 新增與優化 (Added & Optimized)
+- 將 `Main2.html` 優化
+
 ### [1.1.8-1-Preview]
-#### 新增 (Added)
-- 將 `Main2.html` 的樣式抽離至獨立的 `Main2.css` 檔案中，提升代碼維護性
-- 優化 `Main2.html` 的佈局，增加內邊距 (Padding) 防止內容過於貼近螢幕邊緣
-- 縮小 `Main2.html` 頂部導覽列/橫幅 (Hero Section) 的高度，使視覺比例更協調
+#### 新增與優化 (Added & Optimized)
+- 將 `Main2.html` 的樣式完全抽離至專屬 `Main2.css`
+- **大幅縮小**頂部橫幅 (Hero Section) 高度至 `25vh`，優化視覺占比
+- **強化防貼邊設計**：縮小 `main` 最大寬度至 `900px` 並將左右內邊距加大至 `4rem` 
+- 增加區塊間的垂直間距，提升閱讀舒適度
 
 ### [1.1.8-Preview]
 #### 新增 (Added)

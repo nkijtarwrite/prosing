@@ -21,7 +21,7 @@
 }
 
 .hobby-hero {
-    height: 35vh; /* 稍微縮小高度 */
+    height: 25vh; /* 再次縮小高度，原本 35vh */
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
@@ -32,19 +32,19 @@
     text-align: center;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem; /* 增加底部間隔 */
 }
 
 .hobby-hero h1 {
-    font-size: 2rem; /* 縮小一點標題 */
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem; /* 標題再縮小一點 */
+    margin-bottom: 0.3rem;
 }
 
 /* 內容內縮優化 */
 main {
-    max-width: 1000px; /* 限制最大寬度，避免貼邊 */
+    max-width: 900px; /* 從 1000px 縮小到 900px，讓內容更集中，視覺上不貼邊 */
     margin: 0 auto;
-    padding: 2rem; /* 增加內邊距 */
+    padding: 2rem 4rem; /* 增加左右內邊距 (4rem)，防止內容貼邊 */
 }
 
 .game-grid {
