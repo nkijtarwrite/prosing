@@ -67,10 +67,10 @@
             <h2>經驗和實習</h2>
             <ul>
                 <li>
-                    <h3>[實習公司或其他組織名稱]</h3>
-                    <p><strong>角色/職稱：</strong> [例如：網頁開發實習生]</p>
-                    <p><strong>貢獻與職責：</strong> [描述你的工作內容和貢獻]</p>
-                    <p><strong>所學技能：</strong> [例如：學會了使用 React 進行前端開發]</p>
+                    <h3>桃園市龍岡圖書館</h3>
+                    <p><strong>角色/職稱：</strong>志工</p>
+                    <p><strong>貢獻與職責：</strong>負責書架整理，還書上架</p>
+                    <p><strong>所學技能：</strong>學會了如何上架分類書籍，管理手上需要處理的事情</p>
                 </li>
             </ul>
         </section>
@@ -190,6 +190,40 @@
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
             }
+        });
+
+        // 3. 滑鼠拖拽滾動功能 (Grab to Scroll)
+        const html = document.documentElement;
+        let isDown = false;
+        let startY;
+        let scrollTop;
+
+        window.addEventListener('mousedown', (e) => {
+            // 排除點擊連結、按鈕或輸入框的情況
+            if (e.target.closest('a, button, input, textarea')) return;
+            
+            isDown = true;
+            document.body.classList.add('is-dragging');
+            startY = e.pageY - html.offsetTop;
+            scrollTop = html.scrollTop;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            isDown = false;
+            document.body.classList.remove('is-dragging');
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDown = false;
+            document.body.classList.remove('is-dragging');
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const y = e.pageY - html.offsetTop;
+            const walk = (y - startY) * 2; // 調整數值可改變滾動速度
+            html.scrollTop = scrollTop - walk;
         });
     </script>
 </body>

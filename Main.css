@@ -37,6 +37,16 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-light);
+    cursor: grab; /* 提示使用者可以抓取 */
+}
+
+body:active {
+    cursor: grabbing; /* 抓取時的樣式 */
+}
+
+/* 避免選取文字影響拖拽體驗 (可選) */
+body.is-dragging {
+    user-select: none;
 }
 
 /* === 標頭與導覽列 === */
