@@ -138,6 +138,11 @@
         <p>&copy; 2026 [你的名字]的個人網站. All rights reserved.</p>
     </footer>
 
+    <!-- 側邊圓形導航滑竿 -->
+    <div class="scroll-nav-track">
+        <div class="scroll-nav-handle" id="scrollHandle"></div>
+    </div>
+
     <script>
         // 1. 滾動進度條與導覽連結高亮
         window.onscroll = function() {
@@ -192,38 +197,50 @@
             }
         });
 
-        // 3. 滑鼠拖拽滾動功能 (Grab to Scroll)
-        const html = document.documentElement;
-        let isDown = false;
-        let startY;
-        let scrollTop;
+        // 3. 側邊圓形導航滑竿 (Drag Scroller)
+        const handle = document.getElementById('scrollHandle');
+        const track = document.querySelector('.scroll-nav-track');
+        let isDragging = false;
+        let startMouseY;
+        let startHandleY;
 
-        window.addEventListener('mousedown', (e) => {
-            // 排除點擊連結、按鈕或輸入框的情況
-            if (e.target.closest('a, button, input, textarea')) return;
-            
-            isDown = true;
-            document.body.classList.add('is-dragging');
-            startY = e.pageY - html.offsetTop;
-            scrollTop = html.scrollTop;
+        // 更新滑竿位置以匹配目前的滾動位置
+        window.addEventListener('scroll', () => {
+            if (isDragging) return;
+            const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            const trackHeight = track.clientHeight - handle.clientHeight;
+            handle.style.top = (scrollPercent * trackHeight) + 'px';
         });
 
-        window.addEventListener('mouseleave', () => {
-            isDown = false;
-            document.body.classList.remove('is-dragging');
-        });
-
-        window.addEventListener('mouseup', () => {
-            isDown = false;
-            document.body.classList.remove('is-dragging');
+        handle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startMouseY = e.clientY;
+            startHandleY = handle.offsetTop;
+            document.body.style.userSelect = 'none'; // 防止拖動時選中文字
         });
 
         window.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const y = e.pageY - html.offsetTop;
-            const walk = (y - startY) * 2; // 調整數值可改變滾動速度
-            html.scrollTop = scrollTop - walk;
+            if (!isDragging) return;
+            
+            const deltaY = e.clientY - startMouseY;
+            let newHandleY = startHandleY + deltaY;
+            
+            // 限制在軌道內
+            const maxHandleY = track.clientHeight - handle.clientHeight;
+            if (newHandleY < 0) newHandleY = 0;
+            if (newHandleY > maxHandleY) newHandleY = maxHandleY;
+            
+            handle.style.top = newHandleY + 'px';
+            
+            // 計算滾動比例並同步頁面滾動
+            const scrollPercent = newHandleY / maxHandleY;
+            const targetScrollY = scrollPercent * (document.documentElement.scrollHeight - window.innerHeight);
+            window.scrollTo(0, targetScrollY);
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            document.body.style.userSelect = '';
         });
     </script>
 </body>

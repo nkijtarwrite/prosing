@@ -37,16 +37,54 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-light);
-    cursor: grab; /* 提示使用者可以抓取 */
 }
 
-body:active {
-    cursor: grabbing; /* 抓取時的樣式 */
+/* === 側邊圓形導航滑竿 === */
+.scroll-nav-track {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    z-index: 2000;
 }
 
-/* 避免選取文字影響拖拽體驗 (可選) */
-body.is-dragging {
+[data-theme="dark"] .scroll-nav-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.scroll-nav-handle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, background 0.3s ease;
     user-select: none;
+}
+
+.scroll-nav-handle:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.scroll-nav-handle:active {
+    background: var(--primary-color);
+}
+
+.scroll-nav-handle::after {
+    content: '↕';
+    color: white;
+    font-size: 14px;
 }
 
 /* === 標頭與導覽列 === */
