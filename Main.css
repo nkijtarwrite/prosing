@@ -39,6 +39,104 @@ body {
     background-color: var(--bg-light);
 }
 
+/* === 文章卡片佈局 === */
+.article-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.article-card {
+    display: flex;
+    flex-direction: row;
+    background: var(--bg-white);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] .article-card {
+    border-color: rgba(255,255,255,0.05);
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.article-image {
+    flex: 0 0 40%;
+    overflow: hidden;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.1);
+}
+
+.article-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.article-content h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.article-meta {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.article-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.read-more {
+    align-self: flex-start;
+    padding: 0.5rem 1.2rem;
+    background-color: var(--accent-color);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: var(--primary-color);
+}
+
+/* 反轉偶數卡片 (交錯視覺) */
+.article-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+    .article-card, .article-card:nth-child(even) {
+        flex-direction: column;
+    }
+    .article-image {
+        height: 200px;
+    }
+}
+
 /* === 側邊圓形導航滑竿 === */
 .scroll-nav-track {
     position: fixed;
