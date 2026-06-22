@@ -30,6 +30,10 @@
 
 html {
     scroll-behavior: smooth;
+    /* 修正滾動到底部時的跳動問題 */
+    overscroll-behavior: none;
+    /* 強制顯示垂直滾動條，避免內容寬度因滾動條出現而改變 */
+    overflow-y: scroll;
 }
 
 body {
@@ -37,6 +41,8 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-light);
+    /* 確保 body 填滿視窗 */
+    min-height: 100vh;
 }
 
 /* === 文章卡片佈局 === */
@@ -211,7 +217,8 @@ body {
     height: 200px;
     background: rgba(0, 0, 0, 0.05);
     border-radius: 10px;
-    z-index: 2000;
+    z-index: 9999;
+    pointer-events: none;
 }
 
 [data-theme="dark"] .scroll-nav-track {
@@ -219,6 +226,7 @@ body {
 }
 
 .scroll-nav-handle {
+    pointer-events: auto;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);

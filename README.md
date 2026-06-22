@@ -2,6 +2,11 @@
 
 ## 更新日誌 (Changelog)
 
+### [1.1.9-Preview]
+#### 新增 
+- 完善Main2.html內容
+- Main.html修正觸底會跳動的問題
+
 ### [1.1.8-3-Preview]
 #### 修正與擴張 (Fixed & Expanded)
 - 修正 `Main2.html` 區塊內距失效導致的貼邊問題，將 Padding 恢復為與主頁一致的 `3rem`

@@ -14,7 +14,7 @@
         </div>
         <div class="nav-container">
             <div class="logo">
-                <h1>[你的名字]</h1>
+                <h1>林均昊的超讚網頁</h1>
             </div>
             <!-- 導覽列 -->
             <nav>
@@ -47,7 +47,7 @@
                 <li><strong>興趣：</strong> 爆破 </li>
                 <li><strong>目標：</strong>全端網頁設計師</li>
             </ul>
-            <p>我喜歡爆破，程式語言可以爆破</p>
+            <p>我喜歡寫網頁，目標是架設全端網頁!</p>
         </section>
 
         <!-- 教育背景 -->
@@ -90,10 +90,9 @@
             <h2>專案作品</h2>
             <ul>
                 <li>
-                    <h3>[專案名稱] <span>([獨立/團隊] 項目)</span></h3>
-                    <p><strong>專案說明：</strong> [簡短說明這個專案的目的和功能]</p>
-                    <p><strong>技術細節：</strong> [例如：使用了 Node.js 和 Express]</p>
-                    <p><strong>成果展示：</strong> <a href="[專案連結]" target="_blank">點此觀看</a></p>
+                    <h3>[我的前端網頁] <span></span></h3>
+                    <p><strong>專案說明：</strong>就是這個網站!我覺得這是最能展現我的專案作品</p>
+                    <p><strong>技術細節：</strong>使用HTML、CSS架設的網站</p>
                 </li>
             </ul>
         </section>
@@ -110,33 +109,17 @@
                     <div class="article-content">
                         <div class="article-meta">技術探討 • 2026/06/08</div>
                         <h3>我對資管未來趨勢的看法</h3>
-                        <p>在數位轉型的浪潮下，資管系學生不僅需要深厚的技術底蘊，更需具備敏銳的商業思維。本文探討了 AI 與 Web 開發結合的新契機環境...</p>
-                        <a href="#" class="read-more">閱讀全文</a>
+                        <p>我覺得資管是很重要的，因為所有數位工具都需要管理，用戶才能使用，公司才能利用，而設計這些工具的我們就是最主要的管理者，為公司跟用戶提供一個完整的平台跟環境<br>而我覺得資管雖然沒有資工的薪資那麼多，但沒有資管，再強大的工具都沒辦法推廣以及讓所有用戶上手，因此資管是不可或缺的!</p>
                     </div>
                 </article>
 
                 <!-- 文章卡片 2 -->
-                <article class="article-card">
-                    <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="網路安全">
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">資安觀點 • 2026/05/20</div>
-                        <h3>關於「爆破」與程式安全</h3>
-                        <p>「爆破」在程式世界中往往代表著效能的碰撞或系統的極限測試。身為全端開發者，如何編寫出既強大又安全、不輕易被「爆破」的程式碼是關鍵...</p>
-                        <a href="#" class="read-more">閱讀全文</a>
-                    </div>
-                </article>
-            </div>
         </section>
 
         <!-- 獲獎與榮譽 -->
         <section id="awards">
             <h2>獲獎與榮譽</h2>
-            <ul>
-                <li><strong>[獎項名稱]</strong> - [頒發機構] ([年份])</li>
-                <li><strong>[獎學金/競賽成就]</strong> - [主辦單位] ([年份])</li>
-            </ul>
+            <p>目前沒有獲得什麼獎項，我會努力加油的!!</p>
         </section>
 
         <!-- 參與活動照片 -->
@@ -175,6 +158,11 @@
     <script>
         // 1. 滾動進度條與導覽連結高亮
         window.onscroll = function() {
+            // 限制滾動到底部時的跳動
+            const maxScroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (window.scrollY >= maxScroll) {
+                window.scrollTo(0, maxScroll);
+            }
             updateProgressBar();
             updateActiveLink();
         };
