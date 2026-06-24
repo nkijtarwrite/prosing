@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="2; url=Main.html">
     <title>跳轉中...</title>
     <style>
         body {
@@ -31,6 +30,20 @@
             margin: 0 auto 1.5rem;
             animation: spin 1s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
         }
+        button {
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
         @keyframes spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
@@ -50,6 +63,29 @@
         <div class="spinner"></div>
         <h2>正在前往個人網站</h2>
         <p>頁面將在 2 秒後自動跳轉...</p>
+        <button id="regret-btn">我後悔了</button>
     </div>
+
+    <div id="modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:2rem; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.2); z-index:1000; text-align:center; min-width: 300px;">
+        <h3 style="margin: 0 0 10px 0;">提示</h3>
+        <hr style="border: 0; border-top: 3px solid #333; margin-bottom: 15px;">
+        <p style="margin: 0; font-size: 1.2rem;">不能後悔，請進</p>
+    </div>
+
+    <script>
+        const redirectTimeout = setTimeout(() => {
+            window.location.href = 'Main.html';
+        }, 2000);
+
+        document.getElementById('regret-btn').addEventListener('click', () => {
+            clearTimeout(redirectTimeout);
+            const modal = document.getElementById('modal');
+            modal.style.display = 'block';
+            
+            setTimeout(() => {
+                window.location.href = 'Main.html';
+            }, 3000);
+        });
+    </script>
 </body>
 </html>  
