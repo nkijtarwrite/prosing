@@ -48,23 +48,47 @@
 
 /* 內容內鎖優化 */
 main {
-    max-width: 1200px; /* 大幅增加寬度，讓白色區塊更開闊 */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px; /* 確保在小螢幕也有邊距 */
+    padding: 0 1rem;
 }
 
 /* 移除原本覆蓋掉 Main.css 的 padding 設定，讓它回歸預設的 3rem 內距 */
 .hobby-section {
-    padding: 3rem; 
-    margin-bottom: 3rem;
+    padding: 1.5rem; 
+    margin-bottom: 2rem;
     border-radius: 12px;
     background: var(--bg-white);
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    text-align: center; /* 讓標題與引言置中 */
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.article-card {
+    display: flex;
+    flex-direction: row;
+    background: var(--bg-white);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.article-image {
+    flex: 0 0 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
 }
 
 .article-content {
-    text-align: left; /* 保持卡片內文字靠左，方便閱讀 */
+    padding: 1.5rem;
+    flex: 1;
+    text-align: left;
 }
 
 .game-grid {
@@ -109,6 +133,7 @@ main {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .game-card:hover .game-img {
