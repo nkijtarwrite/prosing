@@ -45,14 +45,43 @@ body {
     background-color: var(--bg-light);
     /* 確保 body 填滿視窗 */
     min-height: 100vh;
+    padding: 0 1rem;
 }
 
-/* === 文章卡片佈局 === */
-.article-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+section {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* 自我介紹樣式 */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.about-img {
+    max-width: 100%;
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
 }
 
 .article-card {
