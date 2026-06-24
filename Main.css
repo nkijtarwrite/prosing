@@ -26,6 +26,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 html {
@@ -34,6 +35,7 @@ html {
     overscroll-behavior: none;
     /* 強制顯示垂直滾動條，避免內容寬度因滾動條出現而改變 */
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 body {
@@ -48,9 +50,9 @@ body {
 /* === 文章卡片佈局 === */
 .article-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .article-card {
@@ -71,6 +73,10 @@ body {
     .article-image {
         flex: 0 0 40%;
     }
+    .article-grid {
+        gap: 2rem;
+        padding: 2rem;
+    }
 }
 
 [data-theme="dark"] .article-card {
@@ -83,7 +89,7 @@ body {
 }
 
 .article-image {
-    flex: 0 0 40%;
+    flex: 0 0 100%;
     overflow: hidden;
 }
 
