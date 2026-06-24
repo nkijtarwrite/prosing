@@ -14,7 +14,7 @@
         </div>
         <div class="nav-container">
             <div class="logo">
-                <h1>林均昊的超讚網頁</h1>
+                <h1>林均昊的網頁</h1>
             </div>
             <!-- 導覽列 -->
             <nav>
@@ -123,19 +123,16 @@
             <h2>參與活動照片</h2>
             <div class="photo-container">
                 <figure>
-                    <img src="[活動照片1路徑]" alt="活動照片1" width="250" height="auto">
-                    <figcaption>[活動照片 1 的描述]</figcaption>
+                    <img src="image/saycheese.jpg" alt="活動照片1" style="max-width: 100%; height: auto; width: 300px;">
+                    <figcaption>這是創意思考方法期末報告，我們參加的"活動"之一，(因為我實在沒有參加什麼活動...</figcaption>
                 </figure>
-                <figure>
-                    <img src="[活動照片2路徑]" alt="活動照片2" width="250" height="auto">
-                    <figcaption>[活動照片 2 的描述]</figcaption>
-                </figure>
+
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 [你的名字]的個人網站. All rights reserved.</p>
+        <p>&copy; 2026 個人網站. All rights reserved.</p>
     </footer>
 
     <!-- 漢堡選單 (興趣延伸連結) -->
@@ -208,18 +205,6 @@
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
             }
-        });
-
-            
-            // 計算滾動比例並同步頁面滾動
-            const scrollPercent = newHandleY / maxHandleY;
-            const targetScrollY = scrollPercent * (document.documentElement.scrollHeight - window.innerHeight);
-            window.scrollTo(0, targetScrollY);
-        });
-
-        window.addEventListener('mouseup', () => {
-            isDragging = false;
-            document.body.style.userSelect = '';
         });
     </script>
 </body>
