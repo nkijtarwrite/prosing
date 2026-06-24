@@ -27,6 +27,13 @@
     padding: 0;
     box-sizing: border-box;
     max-width: 100%;
+    word-wrap: break-word;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 html {
@@ -92,6 +99,7 @@ section {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
+    width: 100%;
 }
 
 /* 當螢幕較寬時，改回水平排列 */

@@ -72,15 +72,19 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
     margin-top: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .game-card {
     background: var(--bg-white);
     border-radius: 20px;
-    padding: 30px; /* 增加內邊距 */
+    padding: 30px;
     text-align: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .game-card:hover {
