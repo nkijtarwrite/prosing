@@ -48,18 +48,29 @@ body {
 /* === 文章卡片佈局 === */
 .article-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 2rem;
 }
 
 .article-card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background: var(--bg-white);
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* 當螢幕較寬時，改回水平排列 */
+@media (min-width: 768px) {
+    .article-card {
+        flex-direction: row;
+    }
+    .article-image {
+        flex: 0 0 40%;
+    }
 }
 
 [data-theme="dark"] .article-card {

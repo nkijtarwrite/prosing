@@ -2,6 +2,10 @@
 
 ## 更新日誌 (Changelog)
 
+### [1.1.9-1-Preview]
+#### 新增 
+- 完善RWD響應式網頁架構
+
 ### [1.1.9-Preview]
 #### 新增 
 - 完善Main2.html內容
